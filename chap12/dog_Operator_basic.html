@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Dog(name, breed, weight) {
+      this.name = name;
+      this.breed = breed;
+      this.weight = weight;
+    }
+
+    const fido = new Dog("피도", "잡종", 38);
+    const fluffy = new Dog("플러피", "푸들", 30);
+    const spot = new Dog("스포트", "치와와", 10);
+    const dogs = [fido, fluffy, spot];
+
+    for (let i=0; i < dogs.length; i++) {
+      let size = "작은";
+      
+      if (dogs[i].weight > 10) {
+        size = "큰";
+      } 
+      console.log(`개 : ${dogs[i].name}는 ${size} 크기이며, ${dogs[i].breed} 종입니다.`);
+      // console.log(dogs[i].name + size + dogs[i].breed);
+    }
+  </script>
+</body>
+</html>

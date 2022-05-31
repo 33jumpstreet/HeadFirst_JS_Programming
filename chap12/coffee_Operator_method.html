@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Coffee(roast, ounces) {
+      this.roast = roast;
+      this.ounces = ounces;
+      this.getSize = function() {
+        if (this.ounces === 8) {
+            return "작은";
+        } else if (this.ounces === 12) {
+          return "중간";
+        } else {
+          return "큰";        }
+      };
+
+      this.toString = function() {
+        return (`${this.getSize()}크기의 ${this.roast}커피를 주문했습니다.`)
+      };
+    }
+
+    const houseBlend = new Coffee("하우스블랜드", 12);
+    console.log(houseBlend.toString());
+
+    const darkRoast = new Coffee("다크로스트", 16);
+    console.log(darkRoast.toString());
+  </script>
+</body>
+</html>

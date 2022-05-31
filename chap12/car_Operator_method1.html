@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Car(make, model, year, color, passengers, convertible, mileage) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.color = color;
+      this.passengers = passengers;
+      this.convertible = convertible;
+      this.mileage = mileage;
+      this.started = false;
+      this.start = function () {
+        this.started = true;
+      };
+      this.stop = function () {
+        this.started = false;
+      };
+      this.drive = function () {
+        if (this.started) {
+          console.log(`${this.make} ${this.model}가 달립니다!!`);
+        } else {
+          console.log("먼저 시동을 거쇼!");
+        }
+      };
+    }
+
+    const chevy = new Car("쉐보레", "벨 에어", 1957, "빨간색", 2, false, 1021);
+    const cadi = new Car("GM", "캐딜락", 1955, "갈색", 5, false, 12892);
+    const taxi = new Car("웹타운 모터스", "택시", 1955, "노란색", 4, false, 281341);
+
+    const cars = [chevy, cadi, taxi];
+
+    for (let i=0; i<cars.length; i++) {
+      cars[i].start();
+      cars[i].drive();
+      cars[i].drive();
+      cars[i].stop();
+    }
+  </script>
+</body>
+</html>

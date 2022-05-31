@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Car(params) {
+      this.make = params.make;
+      this.model = params.model;
+      this.year = params.year;
+      this.color = params.color;
+      this.passengers = params.passengers;
+      this.convertible = params.convertible;
+      this.mileage = params.mileage;
+      this.started = false;
+      this.start = function () {
+        this.started = true;
+      };
+      this.stop = function () {
+        this.started = false;
+      };
+      this.drive = function () {
+        if (this.started) {
+          console.log(`${this.make} ${this.model}가 달립니다!!`);
+        } else {
+          console.log("먼저 시동을 거쇼!");
+        }
+      };
+    }
+    
+    const cadiParams = {
+      make : "GM",
+      model : "캐딜락",
+      year : 1955,
+      color : "갈색",
+      passengers : 5,
+      convertible : false,
+      mileage : 12892
+    };
+
+    const chevyParams = {
+      make : "쉐보레", 
+      model : "벨 에어", 
+      year : 1957, 
+      color : "빨간색", 
+      passengers : 2, 
+      convertible : false, 
+      mileage : 1021
+    };
+
+    const taxiParams = {
+      make : "웹타운 모터스", 
+      model : "택시", 
+      year : 1955, 
+      color : "노란색", 
+      passengers : 4, 
+      convertible : false,
+      mileage : 281341
+    }
+
+    const cadi = new Car(cadiParams);
+    const chevy = new Car(chevyParams);
+    const taxi = new Car(taxiParams);
+    const cars = [chevy, cadi, taxi];
+
+    for (let i=0; i<cars.length; i++) {
+      cars[i].start();
+      cars[i].drive();
+      cars[i].drive();
+      cars[i].stop();
+    }
+  </script>
+</body>
+</html>

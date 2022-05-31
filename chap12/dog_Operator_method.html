@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Dog(name, breed, weight) {
+      this.name = name;
+      this.breed = breed;
+      this.weight = weight;
+      this.bark = function () {
+        if (this.weight > 25) {
+          console.log(`${this.name}은 월월 짓어요!!`)
+        } else {
+          console.log(`${this.name}은 왕왕 짓어요!!`)
+        }
+      };
+    }
+
+    const fido = new Dog("피도", "잡종", 38);
+    const fluffy = new Dog("플러피", "푸들", 30);
+    const spot = new Dog("스포트", "치와와", 10);
+    const dogs = [fido, fluffy, spot];
+
+    for (let i=0; i < dogs.length; i++) {
+      dogs[i].bark();
+    }
+  </script>
+</body>
+</html>
