@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Robot(name, year, owner) {
+      this.name = name;
+      this.year = year;
+      this.owner = owner;
+    }
+
+    Robot.prototype.maker = "오브젝트자러스";
+    Robot.prototype.speak = function () {
+      console.log("경고 경고!");
+    }
+
+    Robot.prototype.makeCoffee = function() {
+      console.log("커피 만드는 중입니다.");
+    }
+
+    Robot.prototype.blinkLights = function() {
+      console.log("불 좀 키겠습니다.");
+    }
+
+    const robby = new Robot ("로비", 1956, "닥터뫼비우스");
+    const rosie = new Robot ("로지", 1962, "조지 제트슨");
+
+    robby.onOffSwitch = true;
+    robby.makeCoffee = function() {
+      console.log("스타벅스로 커피 가지러 갈게요");
+    }
+
+    rosie.cleanhouse = function() {
+      console.log("청소 중입니다.");
+    }
+
+    console.log(`${robby.name}는 ${robby.maker}에 의해 ${robby.year}년에 생산되었고 ${robby.owner}가 소유하고 있습니다.`);
+    robby.makeCoffee();
+    robby.blinkLights();
+    
+    console.log(`${rosie.name}는 ${rosie.maker}에 의해 ${rosie.year}년에 생산되었고 ${rosie.owner}가 소유하고 있습니다.`);
+    rosie.cleanhouse();
+</script>
+</body>
+</html>
